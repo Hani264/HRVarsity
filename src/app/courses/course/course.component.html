@@ -1,0 +1,171 @@
+<!-- Page breadcrumb -->
+<section id="mu-page-breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-page-breadcrumb-area">
+                    <h2>Course</h2>
+                    <ol class="breadcrumb">
+                        <li><a routerLink="">Home</a></li>
+                        <li class="active">Course</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End breadcrumb -->
+<section id="mu-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mu-course-content-area">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <!-- start course content container -->
+                            <div class="mu-course-container">
+                                <div class="row">                                    
+                                    <div class="col-md-6 col-sm-6" *ngFor="let c of courses | paginate: { itemsPerPage: 4, currentPage:p,
+                                    totalItems: 6}">
+                                        <div class="mu-latest-course-single">
+                                            <figure class="mu-latest-course-img">                                                
+                                                <a href="javascript: void(0)"><img src="{{c.cImage}}" alt="img"></a>
+                                                <figcaption class="mu-latest-course-imgcaption">
+                                                    <a href="javascript: void(0)"> {{c.cName}} </a>
+                                                    <span><i class="fa fa-clock-o"></i> {{c.cDuration}}  Days</span>
+                                                </figcaption>
+                                            </figure>
+                                            <div class="mu-latest-course-single-content">
+                                                <h4><a href="javascript: void(0)">Lorem ipsum dolor sit amet.</a></h4>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet quod
+                                                    nisi quisquam modi
+                                                    dolore, dicta obcaecati architecto quidem ullam quia.</p>
+                                                <div class="mu-latest-course-single-contbottom">
+                                                    <a class="mu-course-details" mat-raised-button color="primary" routerLink="courseDetails/{{c.id}}">Details</a>
+                                                    <span class="mu-course-price" href="javascript: void(0)">${{c.cPrice}}.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                            <!-- end course content container -->
+                            <!-- start course pagination -->
+                            <!-- <div class="mu-pagination">
+                                <nav>
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="javascript: void(0)" aria-label="Previous">
+                                                <span class="fa fa-angle-left"></span> Prev
+                                            </a>
+                                        </li>
+                                        <li class="active"><a href="javascript: void(0)">1</a></li>
+                                        <li><a href="javascript: void(0)">2</a></li>
+                                        <li><a href="javascript: void(0)">3</a></li>
+                                        <li><a href="javascript: void(0)">4</a></li>
+                                        <li><a href="javascript: void(0)">5</a></li>
+                                        <li>
+                                            <a href="javascript: void(0)" aria-label="Next">
+                                                Next <span class="fa fa-angle-right"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div> -->
+                            <!-- end course pagination -->
+                        </div>
+                        <div class="col-md-3">
+                            <!-- start sidebar -->
+                            <aside class="mu-sidebar">
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Categories</h3>
+                                    <ul class="mu-sidebar-catg">
+                                        <li><a href="javascript: void(0)">Web Design</a></li>
+                                        <li><a href="javascript: void(0)">Web Development</a></li>
+                                        <li><a href="javascript: void(0)">Math</a></li>
+                                        <li><a href="javascript: void(0)">Physics</a></li>
+                                        <li><a href="javascript: void(0)">Camestry</a></li>
+                                        <li><a href="javascript: void(0)">English</a></li>
+                                    </ul>
+                                </div>
+                                <!-- end single sidebar -->
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Popular Course</h3>
+                                    <div class="mu-sidebar-popular-courses">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="javascript: void(0)">
+                                                    <img class="media-object" src="assets/img/courses/1.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="javascript: void(0)">Medical Science</a></h4>
+                                                <span class="popular-course-price">$200.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="javascript: void(0)">
+                                                    <img class="media-object" src="assets/img/courses/2.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="javascript: void(0)">Web Design</a></h4>
+                                                <span class="popular-course-price">$250.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <a href="javascript: void(0)">
+                                                    <img class="media-object" src="assets/img/courses/3.jpg" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="javascript: void(0)">Health & Sports</a></h4>
+                                                <span class="popular-course-price">$90.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end single sidebar -->
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Archives</h3>
+                                    <ul class="mu-sidebar-catg mu-sidebar-archives">
+                                        <li><a href="javascript: void(0)">May <span>(25)</span></a></li>
+                                        <li><a href="javascript: void(0)">June <span>(35)</span></a></li>
+                                        <li><a href="javascript: void(0)">July <span>(20)</span></a></li>
+                                        <li><a href="javascript: void(0)">August <span>(125)</span></a></li>
+                                        <li><a href="javascript: void(0)">September <span>(45)</span></a></li>
+                                        <li><a href="javascript: void(0)">October <span>(85)</span></a></li>
+                                    </ul>
+                                </div>
+                                <!-- end single sidebar -->
+                                <!-- start single sidebar -->
+                                <div class="mu-single-sidebar">
+                                    <h3>Tags Cloud</h3>
+                                    <div class="tag-cloud">
+                                        <a href="javascript: void(0)">Health</a>
+                                        <a href="javascript: void(0)">Science</a>
+                                        <a href="javascript: void(0)">Sports</a>
+                                        <a href="javascript: void(0)">Mathematics</a>
+                                        <a href="javascript: void(0)">Web Design</a>
+                                        <a href="javascript: void(0)">Admission</a>
+                                        <a href="javascript: void(0)">History</a>
+                                        <a href="javascript: void(0)">Environment</a>
+                                    </div>
+                                </div>
+                                <!-- end single sidebar -->
+                            </aside>
+                            <!-- / end sidebar -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
